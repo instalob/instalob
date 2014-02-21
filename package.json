@@ -19,5 +19,11 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/instalob/instalob/issues"
+  },
+  "dependencies": {
+    "q": "~1.0.0",
+    "nodemailer": "~0.6.0",
+    "express": "~3.4.8",
+    "mongoose": "~3.8.7"
   }
 }
