@@ -1,0 +1,23 @@
+{
+  "name": "instalob",
+  "version": "0.0.0",
+  "description": "#initToWinIt",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/instalob/instalob.git"
+  },
+  "keywords": [
+    "instagram",
+    "lob",
+    "postcard"
+  ],
+  "author": "Jesse LaRue, Scott Moss, Mehul Patel, David Wu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/instalob/instalob/issues"
+  }
+}
