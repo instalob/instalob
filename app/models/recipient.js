@@ -3,16 +3,15 @@ var Schema = mongoose.Schema;
 
 models = {};
 
-var UserSchema = new Schema({
+var RecipientSchema = new Schema({
   id: Number,
   name: String,
   privateKey: String,
   publicKey: String
 });
 
-UserSchema.set('toObject', { getters: true });
+RecipientSchema.set('toObject', { getters: true });
 
-
-models.User = mongoose.model('User', UserSchema);
+models.Recipient = mongoose.model('Recipient', RecipientSchema);
 
 module.exports = models;
