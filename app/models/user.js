@@ -14,6 +14,7 @@ var UserSchema = new Schema({
   Email: {
     type:String,
     unique: true,
+    sparse: true,
     index: true
   },
   Home: {
@@ -53,7 +54,6 @@ UserSchema.set('toObject', { getters: true });
 // will find a user by instagram id, if not one,
 // make a new one with the token,id,and username
 UserSchema.statics.findOneOrCreateOne = function(json){
-  console.log('json', json);
   var defer = Q.defer();
   var profile = json.profile;
   var accessToken = json.accessToken;
@@ -63,7 +63,6 @@ UserSchema.statics.findOneOrCreateOne = function(json){
     if(err) defer.reject(err);
     if(user) defer.resolve(user);
     if(!user){
-      console.log('no user here');
       var newUser = new User({
         'instagram.id': profile.id,
         'instagram.accessToken': accessToken,
@@ -72,7 +71,6 @@ UserSchema.statics.findOneOrCreateOne = function(json){
 
       newUser.save(function(err, person){
         if(err) defer.reject(err);
-        console.log("saved user ", person);
         if(person) defer.resolve(person);
       });
     }
