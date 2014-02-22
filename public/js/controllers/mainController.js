@@ -8,4 +8,8 @@ controller("MainController", ['$scope', function($scope) {
     console.log('Submitting hashtags');
   };
 
+  $scope.$watch('emails', function(items) {
+    console.log(items);
+  });
+
 }]);
