@@ -14,6 +14,7 @@ var UserSchema = new Schema({
   Email: {
     type:String,
     unique: true,
+    sparse: true,
     index: true
   },
   Home: {
@@ -68,9 +69,9 @@ UserSchema.statics.findOneOrCreateOne = function(json){
         'instagram.user_name': profile.username
       });
 
-      newUser.save(function(err, user){
+      newUser.save(function(err, person){
         if(err) defer.reject(err);
-        if(user) defer.resolve(user);
+        if(person) defer.resolve(person);
       });
     }
   });

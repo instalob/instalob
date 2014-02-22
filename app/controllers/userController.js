@@ -18,7 +18,7 @@ module.exports = {
     console.log('media_id', media_id);
     instagram.media.info({media_id: media_id,
       complete: function(data){
-        console.log('data');
+        console.log('data', data);
       }});
     res.send(200);
   }
