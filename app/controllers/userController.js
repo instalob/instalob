@@ -8,7 +8,6 @@ module.exports = {
       res.send(204);
     });
   },
-
   subscribe: function(req, res){
     instagram.subscriptions.handshake(req, res);
   },

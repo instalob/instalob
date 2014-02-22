@@ -6,12 +6,16 @@ var User        = require('../models/user.js'),
 module.exports = {
   newTag: function(req, res){
     // make hashtag for owner
-    var user = req.user._id;
-
+    var obj = {
+      userid   : req.user._id,
+      tagName  : req.params('tagName')
+    };
+    Hash.createNew(obj)
+    .then(res.send(obj));
   },
   addRecipient: function(req, res){
     // add recipient to hashtag from the form
-    
+
 
   },
     // removes: {recipient: {}, remove: true}

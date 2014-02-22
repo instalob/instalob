@@ -15,6 +15,28 @@ var HashtagSchema = new Schema({
 
 HashtagSchema.set('toObject', { getters: true });
 
+// HashtagSchema.method.findByOwnerId = function(ownerId) {
+//   // return Owner's Hashtags 
+// }
+
+HashtagSchema.statics.createNew = function(obj){
+  var defer = Q.defer();
+  var User = mongoose.model('User');
+  var newhash = new Hash(obj.tagName);
+  User.findOne({'instagram.id': obj.id})
+  .populate('Hashtags', 'Hashtag')
+  .exec( function(err, Hashbook){
+    if (err) defer.reject(err);
+    console.log('hashbook found ', Hashbook);
+    if (Hashbook) {
+      Hashbook.addToSet(newHash);
+      console.log('hashbook added ', Hashbook);
+      defer.resolve(Hashbook);
+    }
+  });
+  return defer.promise;
+};
+
 HashtagSchema.method.addRecipient = function(owner, recipientObject){
   var defer   = Q.defer();  
   var Hashtag = mongoose.model('Hashtag');
@@ -41,7 +63,8 @@ HashtagSchema.method.recipientArray = function(){
   console.log('HashtagSchema test log:' ,this);
   return defer.promise;
 };
-
+HashtagSchema.method.recipientArray = function(){
+};
 
 
 
