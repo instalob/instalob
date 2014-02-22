@@ -1,7 +1,7 @@
 
 module.exports = {
   instagram: {
-    clientSecret: '77c55b495b4541a1840d63876edbf8d4',
-    clientid: 'ef52537333bb4b31948821519a949d73'
+    clientSecret: '1ec4b1e897714cc2a198b0809e06a37f',
+    clientid: '6dafcdc8eadc44c5adef9dae5235a8f1'
   }
 };
