@@ -24,6 +24,11 @@
     "q": "~1.0.0",
     "nodemailer": "~0.6.0",
     "express": "~3.4.8",
-    "mongoose": "~3.8.7"
+    "mongoose": "~3.8.7",
+    "passport": "~0.2.0",
+    "passport-instagram": "~0.1.2",
+    "instagram-node-lib": "~0.1.1",
+    "request": "~2.34.0",
+    "bitcore": "~0.1.5"
   }
 }

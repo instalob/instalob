@@ -2,7 +2,7 @@
   "name": "instalob",
   "main": "index.js",
   "version": "0.0.0",
-  "homepage": "https://github.com/Mayho/instalob",
+  "homepage": "https://github.com/instalob/instalob",
   "authors": [
     "Mehul Patel <mehul8@gmail.com>"
   ],
@@ -15,6 +15,7 @@
     "tests"
   ],
   "dependencies": {
-    "angular-foundation": "~0.1.0"
+    "angular-foundation": "~0.1.0",
+    "bower-foundation-css": "*"
   }
 }

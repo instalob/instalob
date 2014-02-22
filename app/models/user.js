@@ -1,11 +1,13 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
+var Q      = require('q');
 
 var UserSchema = new Schema({
-  Instagram: {
-    accesstoken: String, 
-    tokenSecret: String,
-    id: String 
+  instagram: {
+    accessToken: String,
+    refreshToken: String,
+    id: String,
+    user_name: String
   },
   FirstName: String,
   LastName: String,
@@ -46,5 +48,33 @@ var UserSchema = new Schema({
 });
 
 UserSchema.set('toObject', { getters: true });
+
+
+// will find a user by instagram id, if not one,
+// make a new one with the token,id,and username
+UserSchema.statics.findOneOrCreateOne = function(json){
+  var defer = Q.defer();
+  var profile = json.profile;
+  var accessToken = json.accessToken;
+  var refreshToken = json.refreshToken;
+  var User = mongoose.model('User');
+  User.findOne({'instagram.id': profile.id}, function(err, user){
+    if(err) defer.reject(err);
+    if(user) defer.resolve(user);
+    if(!user){
+      var newUser = new User({
+        'instagram.id': profile.id,
+        'instagram.accessToken': accessToken,
+        'instagram.user_name': profile.username
+      });
+
+      newUser.save(function(err, user){
+        if(err) defer.reject(err);
+        if(user) defer.resolve(user);
+      });
+    }
+  });
+  return defer.promise;
+};
 
 module.exports = mongoose.model('User', UserSchema);

@@ -20,6 +20,13 @@ config(['$stateProvider', '$routeProvider', function($stateProvider, $routeProvi
       controller: 'SplashController'
     });
 
+  $stateProvider.
+    state('instagram', {
+      url: '/instagram',
+      templateUrl: 'partials/instagram.html',
+      controller: 'InstagramController'
+    });
+
   $routeProvider.
     when('/view1', {
       templateUrl: 'partials/partial1.html',
