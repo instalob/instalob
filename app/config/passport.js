@@ -30,7 +30,6 @@ module.exports = function(passport){
       };
       User.findOneOrCreateOne(json)
       .then(function(user){
-        console.log('user passport.js', user)
         return done(null, user);
       })
       .fail(function(error){

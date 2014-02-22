@@ -5,7 +5,7 @@
         <span class="prefix">#</span>
       </div>
       <div class="small-11 large-11 column">
-        <input type="text" placeholder="Enter a hashtag to track" />
+        <input type="text" placeholder="Enter a hashtag to track" ng-model="hashtag" required />
       </div>
     </div>
 
@@ -18,7 +18,7 @@
 
     <div class="row">
       <div class="small-3 small-centered column">
-        <button ng-click="hashtagSubmit()">Submit</button>
+        <button ng-click="submit()">Submit</button>
       </div>
     </div>
 

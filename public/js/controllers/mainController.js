@@ -1,15 +1,24 @@
 angular.module('myApp.controllers').
 
-controller("MainController", ['$scope', function($scope) {
+controller('MainController', ['$scope', 'MailService', function($scope, MailService) {
 
-  $scope.title = "Main hey hey!";
+  $scope.title = "Main";
 
-  $scope.hashtagSubmit = function() {
-    console.log('Submitting hashtags');
+  // $scope.$watch('emails', function(emails) {
+  //   console.log(emails);
+    // emails.forEach(function(email) {
+    //   MailService.sendTo(email);
+    // });
+  // });
+
+  $scope.submit = function() {
+    // validate hashtag
+    var hashtag = $scope.hashtag;
+    if ($scope.hashtag[0] !== '#') {
+      hashtag = '#' + hashtag;
+    }
+    console.log(hashtag);
+    MailService.send($scope.emails);
   };
-
-  $scope.$watch('emails', function(items) {
-    console.log(items);
-  });
 
 }]);
