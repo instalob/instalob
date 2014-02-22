@@ -22,5 +22,5 @@ app.use(express.static(__dirname + '/../public'));
 
 require('./routes/appRoutes.js')(app);
 require('./routes/userRoutes.js')(app, passport);
-
+require('./routes/lobRoutes.js')(app);
 module.exports = app;
