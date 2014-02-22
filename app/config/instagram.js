@@ -5,7 +5,14 @@ var env       = require('./env.js');
 
 instagram.set('client_id', config.instagram.clientid);
 instagram.set('client_secret', config.instagram.clientSecret);
-instagram.set('callbak_url', env.url + '/instagram/callback');
+instagram.set('callback_url', env.url + '/instagram/subscribe');
 instagram.set('redirect_uri', env.url);
+
+instagram.users.subscribe({
+  object: 'user',
+  aspect: 'media',
+  type: 'subscription',
+  id: '1'
+});
 
 module.exports = instagram;
