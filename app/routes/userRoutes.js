@@ -18,6 +18,6 @@ module.exports = function(app, passport){
 
   app.delete('/', userController.delete);
 
-  app.get('/subscribe', userController.subscribe);
-  app.post('/subscribe', userController.update);
+  app.use('/instagram/subscribe', userController.subscribe);
+  app.post('/instagram/subscribe', userController.update);
 };

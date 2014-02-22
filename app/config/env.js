@@ -1,6 +1,6 @@
 
 
-var url = process.env.URL || 'http://127.0.0.1:3000';
+var url = 'http://ec2-54-201-82-157.us-west-2.compute.amazonaws.com' || 'http://127.0.0.1:3000';
 module.exports = {
   url: url,
   errorCatcher: function(err, req, res, next){

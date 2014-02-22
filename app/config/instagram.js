@@ -13,7 +13,6 @@ instagram.users.subscribe({
   aspect: 'media',
   type: 'subscription',
   id: '1',
-
 });
 
 module.exports = instagram;
