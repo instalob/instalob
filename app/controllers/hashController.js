@@ -1,6 +1,6 @@
 var User        = require('../models/user.js'),
     Recipient   = require('../models/recipient.js'),
-    Hash        = request('../models/hashtag.js'),
+    Hash        = require('../models/hashtag.js'),
     request     = require('request');
 
 module.exports = {

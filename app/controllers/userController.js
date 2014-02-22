@@ -42,7 +42,7 @@ var processImage = function (data) {
   // findUsersHashtags
   User.findUsersHashtags(data) // object with insta data and hashtag array
   .then(User.compareHashtags) // matched hashtags models
-  .then(FindReciepients) // find reciepients
+  .then(FindRecipients) // find reciepients
   .then(MakePDF) // pdf string
   .then(SendLob) // order response
   .then(NotifySender) // logs order to account
