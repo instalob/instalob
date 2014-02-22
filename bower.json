@@ -15,7 +15,5 @@
     "tests"
   ],
   "dependencies": {
-    "angular-foundation": "~0.1.0",
-    "bower-foundation-css": "*"
   }
 }
