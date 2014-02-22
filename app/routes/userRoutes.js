@@ -12,12 +12,12 @@ module.exports = function(app, passport){
 
   // instagram ouath callback url
   app.get('/auth/instagram/callback', passport.authenticate('instagram'), function(req, res){
-    console.log('here');
+    console.log('callback');
     res.redirect('/');
   });
 
   app.delete('/', userController.delete);
 
-  app.get('/subscribe', userController.subscribe);
-  app.post('/subscribe', userController.update);
+  app.use('/instagram/subscribe', userController.subscribe);
+  app.post('/instagram/subscribe', userController.update);
 };

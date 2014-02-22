@@ -10,11 +10,16 @@ module.exports = {
   },
 
   subscribe: function(req, res){
-
+    instagram.subscriptions.handshake(req, res);
   },
 
   update: function(req, res){
-    console.log(req.body);
+    var media_id = req.body[0].data.media_id;
+    console.log('media_id', media_id);
+    instagram.media.info({media_id: media_id,
+      complete: function(data){
+        console.log('data', data);
+      }});
     res.send(200);
   }
 };

@@ -1,0 +1,18 @@
+<ul>
+  <li ng-repeat="tag in tags">
+    <a ng-click="getRecipients(tag)">
+      {{ tag }}
+    </a>
+  </li>
+</ul>
+
+<div class="recipients">
+  <input type="text" ng-model="search" />
+  <ul>
+    <li ng-repeat="recipient in recipients">
+      <a href="#" ng-click="editRecipient(recipient)">
+        {{ recipient.info }}
+      </a>
+    </li>
+  </ul>
+</div>

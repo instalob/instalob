@@ -5,7 +5,7 @@ module.exports = {
   url: url,
   errorCatcher: function(err, req, res, next){
     if(!err) return next();
-    console.error(err.stack);
+    console.error(err);
     res.send(500);
   }
 };

@@ -8,7 +8,7 @@ require('./config/passport.js')(passport);
 var app         = express();
 
 
-mongoose.connect('mongodb://localhost/instalob');
+mongoose.connect('mongodb://localhost/instalob' || MONGO);
 
 app.use(express.bodyParser());
 app.use(express.logger('dev'));
