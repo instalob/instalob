@@ -7,12 +7,12 @@
   <link rel="stylesheet" href="bower_components/bower-foundation-css/foundation.css"/>
 </head>
 <body>
-  <ul class="menu">
-    <li><a href="#/view1">view1</a></li>
-    <li><a href="#/view2">view2</a></li>
-  </ul>
 
-  <!-- <div ng-view></div> -->
+  <div class="row">
+    <div class="small-2 large-2 column">InstaLob</div>
+    <div class="small-4 large-4 column">Center</div>
+    <div class="small-6 large-6 column">Right</div>
+  </div> 
 
   <ui-view></ui-view>
 
@@ -27,6 +27,9 @@
   <script src="js/controllers.js"></script>
   <script src="js/filters.js"></script>
   <script src="js/directives.js"></script>
+
+  <!-- Controllers -->
+  <script src="js/controllers/splashController.js"></script>
 
   <script src="bower_components/angular-foundation/mm-foundation-tpls.js"></script>
   <script src="bower_components/angular-foundation/mm-foundation.js"></script>
