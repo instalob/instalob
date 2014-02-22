@@ -69,10 +69,10 @@ UserSchema.statics.findOneOrCreateOne = function(json){
         'instagram.user_name': profile.username
       });
 
-      newUser.save(function(err, user){
+      newUser.save(function(err, person){
         if(err) defer.reject(err);
-        console.log("saved user", user);
-        if(user) defer.resolve(user);
+        console.log("saved user", person);
+        if(person) defer.resolve(person);
       });
     }
   });
