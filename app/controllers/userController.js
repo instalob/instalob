@@ -19,12 +19,12 @@ module.exports = {
       media_id: media_id,
       complete: function(data){
         console.log('data', data);
-        User.processImage(data);
+        processImage(data);
     }});
     res.send(200);
   }
 };
-            
+
 var compareImageTagsWithUserTags = function(imgTags, subscriberTags) {
   imgTags.forEach(function(imgTag) {
     subscriberTags.forEach(function(subscribedTag) {
@@ -41,32 +41,13 @@ var processImage = function (data) {
 
 
   // findUsersHashtags
-  User.findUsersHashtags(data);
-
-  // compare users hashtags, returns array of matched hashtags from image
-  
-  // for each matched tag, get recipients for that tag, return recipients array
-
-    // get pdf
-
-  // for each recipient, order a card w/ Message & PDF
-
-
-
-
-
-
- User.findUsersHashtags(data.user.id)
-  .then(function(hashtagArray) {
-    compareImageTagsWithUserTags(data.tags, hashtagArray);
+  User.findUsersHashtags(data) // object with insta data and hashtag array
+  .then(User.compareHashtags) // matched hashtags models
+  .then(FindReciepients) // find reciepients
+  .then(MakePDF) // pdf string
+  .then(SendLob) // order response
+  .then(NotifySender) // logs order to account
+  .fail(function(err){
+    console.log('error somewhere: ', error);
   });
-
-  // 
-
-
-
-
-
-
-
 };
