@@ -1,18 +1,50 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-models = {};
-
 var UserSchema = new Schema({
-  id: Number,
-  name: String,
-  privateKey: String,
-  publicKey: String
+  Instagram: {
+    accesstoken: String, 
+    tokenSecret: String,
+    id: String 
+  },
+  FirstName: String,
+  LastName: String,
+  Email: {
+    type:String,
+    unique: true,
+    index: true
+  },
+  Home: {
+    address_line1: String,
+    address_line2: String,
+    address_city: String,
+    address_state: String,
+    address_zip: String,
+    address_country: String
+  },
+  Billing: {
+    address_line1: String,
+    address_line2: String,
+    address_city: String,
+    address_state: String,
+    address_zip: String,
+    address_country: String
+  },
+  Addressbook: [{
+    type: mongoose.Schema.ObjectId,
+    ref: 'Recipient'
+  }],
+  Hashtags: [{
+    type: mongoose.Schema.ObjectId,
+    ref: 'Hashtag'
+  }],
+  OrderHistory: [{
+    type: mongoose.Schema.ObjectId,
+    ref: 'Order'
+  }]
+
 });
 
 UserSchema.set('toObject', { getters: true });
 
-
-models.User = mongoose.model('User', UserSchema);
-
-module.exports = models;
+module.exports = mongoose.model('User', UserSchema);
