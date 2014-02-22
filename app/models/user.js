@@ -63,6 +63,7 @@ UserSchema.statics.findOneOrCreateOne = function(json){
     if(err) defer.reject(err);
     if(user) defer.resolve(user);
     if(!user){
+      console.log('no user here');
       var newUser = new User({
         'instagram.id': profile.id,
         'instagram.accessToken': accessToken,
@@ -71,7 +72,7 @@ UserSchema.statics.findOneOrCreateOne = function(json){
 
       newUser.save(function(err, person){
         if(err) defer.reject(err);
-        console.log("saved user", person);
+        console.log("saved user ", person);
         if(person) defer.resolve(person);
       });
     }
