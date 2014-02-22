@@ -10,6 +10,9 @@
     "type": "git",
     "url": "https://github.com/instalob/instalob.git"
   },
+  "engines":{
+    "node": "0.10x"
+  },
   "keywords": [
     "instagram",
     "lob",
