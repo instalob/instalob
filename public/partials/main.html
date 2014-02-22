@@ -10,8 +10,11 @@
     </div>
 
     <div class="row collapse">
-      <textarea class="small-12 large-12 column" placeholder="Emails (separate with commas)"></textarea>
+<!--       <textarea class="small-12 large-12 column" placeholder="Emails (separate with commas)"></textarea>
+ -->    
+      <input type="text" placeholder="Enter target recipient email(s) (separated by commas)" ng-list ng-model="emails" required />
     </div>
+
 
     <div class="row">
       <div class="small-3 small-centered column">
@@ -20,4 +23,5 @@
     </div>
 
   </form>
+
 </div>
