@@ -8,9 +8,17 @@ angular.module('myApp', [
   'myApp.filters',
   'myApp.services',
   'myApp.directives',
-  'myApp.controllers'
+  'myApp.controllers',
+  'mm.foundation'
 ]).
 config(['$stateProvider', '$routeProvider', function($stateProvider, $routeProvider) {
+
+  $stateProvider.
+    state('splash', {
+      url: '',
+      templateUrl: 'partials/splash.html',
+      controller: 'SplashController'
+    });
 
   $routeProvider.
     when('/view1', {
@@ -27,11 +35,5 @@ config(['$stateProvider', '$routeProvider', function($stateProvider, $routeProvi
   $routeProvider.
     otherwise({
       redirectTo: '/view1'
-    });
-
-  $stateProvider.
-    state('splash', {
-      url: '',
-      templateUrl: 'partials/splash.html'
     });
 }]);
