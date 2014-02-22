@@ -20,6 +20,9 @@ controller("MainController", ['$scope', function($scope) {
       str = str.join('');
       console.log(str);
     }
+
+    MailService.send($scope.emails);
+    
   };
 
 }]);
