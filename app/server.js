@@ -7,6 +7,7 @@ require('./config/passport.js')(passport);
 
 var app         = express();
 
+
 mongoose.connect('mongodb://localhost/instalob');
 
 app.use(express.bodyParser());
@@ -17,7 +18,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(app.router);
 app.use(errorCatcher);
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/../public'));
 
 require('./routes/appRoutes.js')(app);
 require('./routes/userRoutes.js')(app, passport);
