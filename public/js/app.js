@@ -18,6 +18,12 @@ config(['$stateProvider', '$routeProvider', function($stateProvider, $routeProvi
       url: '',
       templateUrl: 'partials/splash.html',
       controller: 'SplashController'
+    }).
+
+    state('main', {
+      url: '/main',
+      templateUrl: 'partials/main.html',
+      controller: 'MainController'
     });
 
   $stateProvider.
