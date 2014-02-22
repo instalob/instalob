@@ -54,18 +54,47 @@ UserSchema.set('toObject', { getters: true });
 // will find a user by instagram id, if not one,
 // make a new one with the token,id,and username
 
-UserSchema.statics.findUsersHashtags = function(id){
+UserSchema.statics.findUsersHashtags = function(data){
   var defer = Q.defer();
   var User = mongoose.model('User');
-
+  var id = data.user.id;
   User.findOne({'instagram.id': id})
     .populate('Hashtags', 'Hashtag')
     .exec(function(err, user) {
     if(err) defer.reject(err);
-    if(user) defer.resolve(user.Hashtags);
+    var obj = {
+      data: data,
+      hashArray: user.Hashtags
+    };
+    if(user) defer.resolve(obj);
   });
   return defer.promise;
 };
+
+UserSchema.statics.compareHashtags = function(obj){
+  var defer = Q.defer();
+  var userTags = obj.hashArray;
+  var imgTags = obj.tags;
+  var matchedTags = [];
+
+  imgTags.forEach(function(imgTag) {
+    userTags.forEach(function(userTag){
+      if(userTag === imgTag){
+        matchedTags.push(imgTag);
+      }
+    });
+  });
+  // delete obj.hashArray;
+  obj.matchedTags = matchedTags;
+  if(matchedTags.length){
+    defer.resolve(obj);
+  } else {
+    defer.reject('no matched tags');
+  }
+  return defer.promise;
+};
+
+
 
 UserSchema.statics.findOneOrCreateOne = function(json){
   var defer = Q.defer();
