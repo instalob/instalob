@@ -2,14 +2,24 @@ angular.module('myApp.controllers').
 
 controller("MainController", ['$scope', function($scope) {
 
-  $scope.title = "Main hey hey!";
+  $scope.title = "Main";
 
-  $scope.hashtagSubmit = function() {
-    console.log('Submitting hashtags');
-  };
-
-  $scope.$watch('emails', function(items) {
-    console.log(items);
+  $scope.$watch('emails', function(emails) {
+    console.log(emails);
+    // emails.forEach(function(email) {
+    //   MailService.sendTo(email);
+    // });
   });
+
+  $scope.submit = function() {
+    // validate hashtag
+    var str = $scope.hashtag;
+    if (str[0] !== '#') {
+      str = str.split('');
+      str.unshift('#');
+      str = str.join('');
+      console.log(str);
+    }
+  };
 
 }]);
