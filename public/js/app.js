@@ -3,13 +3,13 @@
 
 // Declare app level module which depends on filters, and services
 angular.module('myApp', [
+  'ui.bootstrap',
   'ngRoute',
   'ui.router',
   'myApp.filters',
   'myApp.services',
   'myApp.directives',
-  'myApp.controllers',
-  'mm.foundation'
+  'myApp.controllers'
 ]).
 config(['$stateProvider', '$routeProvider', function($stateProvider, $routeProvider) {
 
