@@ -12,7 +12,7 @@ module.exports = function(app, passport){
 
   // instagram ouath callback url
   app.get('/auth/instagram/callback', passport.authenticate('instagram'), function(req, res){
-    console.log('here');
+    console.log('callback');
     res.redirect('/');
   });
 

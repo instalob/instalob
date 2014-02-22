@@ -19,9 +19,10 @@ module.exports = function(passport){
   passport.use(new InstagramStrategy({
     clientID: instaApp.clientid,
     clientSecret: instaApp.clientSecret,
-    callbackURL: env.url +'/auth/instagram/callback'
+    callbackURL: env.url + '/auth/instagram/callback'
   },
   function(accessToken, refreshtoken, profile, done){
+
     process.nextTick(function(){
       var json = {
         accessToken: accessToken,
@@ -29,6 +30,7 @@ module.exports = function(passport){
       };
       User.findOneOrCreateOne(json)
       .then(function(user){
+        console.log('user passport.js', user)
         return done(null, user);
       })
       .fail(function(error){

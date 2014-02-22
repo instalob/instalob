@@ -53,6 +53,7 @@ UserSchema.set('toObject', { getters: true });
 // will find a user by instagram id, if not one,
 // make a new one with the token,id,and username
 UserSchema.statics.findOneOrCreateOne = function(json){
+  console.log('json', json);
   var defer = Q.defer();
   var profile = json.profile;
   var accessToken = json.accessToken;
@@ -70,6 +71,7 @@ UserSchema.statics.findOneOrCreateOne = function(json){
 
       newUser.save(function(err, user){
         if(err) defer.reject(err);
+        console.log("saved user", user);
         if(user) defer.resolve(user);
       });
     }
