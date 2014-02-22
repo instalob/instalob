@@ -1,17 +1,17 @@
-var User      = require('../models/user.js');
-var Recipient      = require('../models/recipient.js');
-var lob       = require('../config/lob.js');
+var User        = require('../models/user.js'),
+    Recipient   = require('../models/recipient.js'),
+    lob         = require('../config/lob.js'),
+    request     = require('request');
 
 module.exports = {
   verifyAddress: function(req, res){
     //TODO: verify address during recipient signup
+    var address = req.body;
+    console.log(req.body);
+    res.send();
   },
 
-  orderPostcard: function(req, res){
-
-  },
-
-  batchProcess: function(req, res){
+  orderPostcard: function(order){
     
   }
 };
