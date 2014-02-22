@@ -13,15 +13,12 @@ controller("MainController", ['$scope', function($scope) {
 
   $scope.submit = function() {
     // validate hashtag
-    var str = $scope.hashtag;
-    if (str[0] !== '#') {
-      str = str.split('');
-      str.unshift('#');
-      str = str.join('');
-      console.log(str);
+    var hashtag = $scope.hashtag;
+    if ($scope.hashtag[0] !== '#') {
+      hashtag = '#' + hashtag;
     }
 
-    MailService.send($scope.emails);
+    // MailService.send($scope.emails);
     
   };
 
