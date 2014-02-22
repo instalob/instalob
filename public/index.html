@@ -9,12 +9,32 @@
 <body>
 
 
-  <div class="row">
-    <div class="small-2 large-2 column">InstaLob</div>
-    <div class="small-4 large-4 column">Center</div>
-    <div class="small-6 large-6 column">Right</div>
-  </div>
+  <nav class="top-bar" data-topbar>
+    <ul class="title-area">
+      <li class="name">
+        <h1><a href="#">InstaLob</a></h1>
+      </li>
+      <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+    </ul>
 
+    <section class="top-bar-section">
+      <!-- Right Nav Section -->
+      <ul class="right">
+        <li class="active"><a href="#">Right Button Active</a></li>
+        <li class="has-dropdown">
+          <a href="#">Right Button with Dropdown</a>
+          <ul class="dropdown">
+            <li><a href="#">First link in dropdown</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <!-- Left Nav Section -->
+      <!-- <ul class="left">
+        <li><a href="#">Left Nav Button</a></li>
+      </ul> -->
+    </section>
+  </nav>
 
   <ui-view></ui-view>
 
@@ -31,8 +51,10 @@
   <script src="js/directives.js"></script>
 
   <!-- Controllers -->
-  <script src="js/controllers/splashController.js"></script>
+  <script src="js/controllers/hashtagController.js"></script>
   <script src="js/controllers/instagramController.js"></script>
+  <script src="js/controllers/splashController.js"></script>
+  <script src="js/controllers/mainController.js"></script>
 
   <script src="bower_components/angular-foundation/mm-foundation-tpls.js"></script>
   <script src="bower_components/angular-foundation/mm-foundation.js"></script>

@@ -18,15 +18,29 @@ config(['$stateProvider', '$routeProvider', function($stateProvider, $routeProvi
       url: '',
       templateUrl: 'partials/splash.html',
       controller: 'SplashController'
-    });
+    }).
 
-  $stateProvider.
     state('instagram', {
       url: '/instagram',
       templateUrl: 'partials/instagram.html',
       controller: 'InstagramController'
+    }).
+
+    state('main', {
+      url: '/main',
+      templateUrl: 'partials/main.html',
+      controller: 'MainController'
+    }).
+
+    state('hashtags', {
+      url: '/hashtags',
+      templateUrl: 'partials/hashtag.html',
+      controller: 'HashtagController'
     });
 
+  /*
+   * Old routes
+   */
   $routeProvider.
     when('/view1', {
       templateUrl: 'partials/partial1.html',
