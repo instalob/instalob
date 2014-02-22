@@ -53,6 +53,20 @@ UserSchema.set('toObject', { getters: true });
 
 // will find a user by instagram id, if not one,
 // make a new one with the token,id,and username
+
+UserSchema.statics.findUsersHashtags = function(id){
+  var defer = Q.defer();
+  var User = mongoose.model('User');
+
+  User.findOne({'instagram.id': id})
+    .populate('Hashtags', 'Hashtag')
+    .exec(function(err, user) {
+    if(err) defer.reject(err);
+    if(user) defer.resolve(user.Hashtags);
+  });
+  return defer.promise;
+};
+
 UserSchema.statics.findOneOrCreateOne = function(json){
   var defer = Q.defer();
   var profile = json.profile;

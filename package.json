@@ -10,7 +10,7 @@
     "type": "git",
     "url": "https://github.com/instalob/instalob.git"
   },
-  "engines":{
+  "engines": {
     "node": "0.10x"
   },
   "keywords": [
@@ -32,6 +32,7 @@
     "passport-instagram": "~0.1.2",
     "instagram-node-lib": "~0.1.1",
     "request": "~2.34.0",
-    "bitcore": "~0.1.5"
+    "bitcore": "~0.1.5",
+    "pdfkit": "~0.4.2"
   }
 }
