@@ -1,9 +1,21 @@
 
 <form name="hashtagForm" class="bs-example form-horizontal">
+
   <fieldset class="input-group input-group-lg">
+
     <legend>Please Enter A Hashtag.</legend>
-    <input type="text" placeholder="#hashtag" ng-model="hashtag" required class="form-control"/>
-    <br><br><br>
-    <button ng-click="submit()" class="btn btn-info btn-block">Submit</button>
+
+    <div style="width:75%; margin: 0 auto;">
+      <div class="input-group">
+        <span class="input-group-addon">#</span>
+        <input type="text" placeholder="hashtag" ng-model="hashtag" required class="form-control"/>
+      </div>
+
+      <br><br>
+
+      <button ng-click="submit()" class="btn btn-info btn-block">Submit</button>
+    </div>
+
   </fieldset>
+
 </form>
