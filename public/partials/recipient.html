@@ -1,13 +1,51 @@
-<form name="recipientInfo" class="bs-example form-horizontal">
-  <fieldset>
+<form name="recipientInfo" class="bs-example form-horizontal well">
+  <fieldset class="input-group input-group-lg">
     <legend>Please input your recipient's info.</legend>
-    <input type="text" name="name" placeholder="Name" class="form-control"/>
-    <input type="text" name="address1" placeholder="Adress Line 1" class="form-control"/>
-    <input type="text" name="address2" placeholder="Address Line 2" class="form-control"/>
-    <input type="text" name="city" placeholder="City" class="form-control"/>
-    <input type="text" name="state" placeholder="State" class="form-control"/>
-    <input type="text" name="zip" placeholder="Zipcode" class="form-control"/>
+
+    <div class="form-group">
+      <label for="name" class="col-lg-1 control-label">Name</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control" id="name" placeholder="Name">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="address1" class="col-lg-1 control-label">Address Line 1</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control" id="address1" placeholder="Address Line 1">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="address2" class="col-lg-1 control-label">Address Line 2</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control" id="address2" placeholder="Address Line 2">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="city" class="col-lg-1 control-label">City</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control" id="city" placeholder="City">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="state" class="col-lg-1 control-label">State</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control" id="state" placeholder="State">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="zip" class="col-lg-1 control-label">Zip Code</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control" id="zip" placeholder="Zip Code">
+      </div>
+    </div>
+
     <button class="btn btn-info" ng-click="submitInfo(recipientInfo)">Submit and Add More Recipients</button>
+
     <button class="btn btn-info" ng-click="submitInfo(recipientInfo)">Submit and go to Main Page</button>
   </fieldset>
 </form>

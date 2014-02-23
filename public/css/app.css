@@ -28,3 +28,23 @@
   content: "";
   padding: 0;
 }
+
+/* My Styles */
+
+body {
+  padding-top: 65px;
+}
+
+.nav {
+  font-size: 2em;
+}
+
+.navbar-brand {
+  font-size: 2.5em;
+  font-weight: 500;
+}
+
+ul {
+  list-style-type: none;
+  font-size: 1.4em;
+}
