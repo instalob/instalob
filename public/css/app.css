@@ -1,4 +1,7 @@
 /* app css stylesheet */
+body{
+  padding-top: 65px;
+}
 
 .menu {
   list-style: none;
