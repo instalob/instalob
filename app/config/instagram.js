@@ -3,10 +3,11 @@ var config    = require('./config');
 var env       = require('./env.js');
 
 
+
 instagram.set('client_id', config.instagram.clientid);
 instagram.set('client_secret', config.instagram.clientSecret);
-instagram.set('callback_url', env.url + '/instagram/subscribe');
-instagram.set('redirect_uri', env.url);
+instagram.set('callback_url', process.env.URL + '/instagram/subscribe');
+instagram.set('redirect_uri', process.env.URL);
 
 instagram.users.subscribe({
   object: 'user',

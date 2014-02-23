@@ -1,5 +1,6 @@
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+var mongoose = require('mongoose'),
+    Schema = mongoose.Schema,
+    Q      = require('q');
 
 var HashtagSchema = new Schema({
   Hashtag: String, 
@@ -22,16 +23,17 @@ HashtagSchema.set('toObject', { getters: true });
 HashtagSchema.statics.createNew = function(obj){
   var defer = Q.defer();
   var User = mongoose.model('User');
-  var newhash = new Hash(obj.tagName);
-  User.findOne({'instagram.id': obj.id})
+  var Hashtag = mongoose.model('Hashtag');
+  var newhash = new Hashtag({'Hashtag': obj.tagName});
+  newhash.save();
+  User.findOne({'instagram.id': obj.userid})
   .populate('Hashtags', 'Hashtag')
-  .exec( function(err, Hashbook){
+  .exec( function(err, User){
     if (err) defer.reject(err);
-    console.log('hashbook found ', Hashbook);
-    if (Hashbook) {
-      Hashbook.addToSet(newHash);
-      console.log('hashbook added ', Hashbook);
-      defer.resolve(Hashbook);
+    if (User) {
+      User.Hashtags.addToSet(newhash);
+      User.save(); // TODO: this is ugly... should be fixed, i think.
+      defer.resolve(User.Hashtags);
     }
   });
   return defer.promise;
