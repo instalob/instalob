@@ -1,3 +1,5 @@
+<h3>Click on a Hashtag to see the recipients associated with the tag.</h3>
+
 <ul>
   <li ng-repeat="tag in tags">
     <a ng-click="getRecipients(tag)">
@@ -7,10 +9,9 @@
 </ul>
 
 <div class="recipients">
-  <input type="text" ng-model="search" />
   <ul>
     <li ng-repeat="recipient in recipients">
-      <a href="#" ng-click="editRecipient(recipient)">
+      <a ng-click="editRecipient(recipient)">
         {{ recipient.info }}
       </a>
     </li>

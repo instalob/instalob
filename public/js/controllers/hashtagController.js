@@ -2,6 +2,8 @@ angular.module('myApp.controllers').
 
 controller('HashtagController', ['$scope', function($scope) {
 
+  $scope.title = 'My Hashtags';
+
   $scope.tags = [
     '#launch',
     '#hackathon',
