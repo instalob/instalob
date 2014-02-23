@@ -42,6 +42,12 @@ config(['$stateProvider', '$routeProvider', function($stateProvider, $routeProvi
       url: '/recipient',
       templateUrl: 'partials/recipient.html',
       controller: 'RecipientController'
+    }).
+
+    state('myHashtags', {
+      url: '/myhashtags',
+      templateUrl: 'partials/myhashtags.html',
+      controller: 'MyHashtagsController'
     });
 
   /*
