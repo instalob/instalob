@@ -1,11 +1,13 @@
-<form name="recipientInfo">
-
-  <input type="text" name="name" placeholder="Name" />
-  <input type="text" name="address1" placeholder="Adress Line 1" />
-  <input type="text" name="address2" placeholder="Address Line 2" />
-  <input type="text" name="city" placeholder="City" />
-  <input type="text" name="state" placeholder="State" />
-  <input type="text" name="zip" placeholder="Zipcode" />
-  <button ng-click="submitInfo(recipientInfo)">submit</button>
-
+<form name="recipientInfo" class="bs-example form-horizontal">
+  <fieldset>
+    <legend>Please input your recipient's info.</legend>
+    <input type="text" name="name" placeholder="Name" class="form-control"/>
+    <input type="text" name="address1" placeholder="Adress Line 1" class="form-control"/>
+    <input type="text" name="address2" placeholder="Address Line 2" class="form-control"/>
+    <input type="text" name="city" placeholder="City" class="form-control"/>
+    <input type="text" name="state" placeholder="State" class="form-control"/>
+    <input type="text" name="zip" placeholder="Zipcode" class="form-control"/>
+    <button class="btn btn-info" ng-click="submitInfo(recipientInfo)">Submit and Add More Recipients</button>
+    <button class="btn btn-info" ng-click="submitInfo(recipientInfo)">Submit and go to Main Page</button>
+  </fieldset>
 </form>

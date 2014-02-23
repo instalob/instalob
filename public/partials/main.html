@@ -1,27 +1,9 @@
-<div>
-  <form class="hashtagForm">
-    <div class="row collapse">
-      <div class="small-1 large-1 column">
-        <span class="prefix">#</span>
-      </div>
-      <div class="small-11 large-11 column">
-        <input type="text" placeholder="Enter a hashtag to track" ng-model="hashtag" required />
-      </div>
-    </div>
 
-    <div class="row collapse">
-<!--       <textarea class="small-12 large-12 column" placeholder="Emails (separate with commas)"></textarea>
- -->    
-      <input type="text" placeholder="Enter target recipient email(s) (separated by commas)" ng-list ng-model="emails" required />
-    </div>
-
-
-    <div class="row">
-      <div class="small-3 small-centered column">
-        <button ng-click="submit()">Submit</button>
-      </div>
-    </div>
-
-  </form>
-
-</div>
+<form name="hashtagForm" class="bs-example form-horizontal">
+  <fieldset>
+    <legend>Please Enter A Hashtag.</legend>
+    <input type="text" placeholder="#hashtag" ng-model="hashtag" required class="form-control"/>
+    <br><br>
+    <button ng-click="submit()" class="btn btn-info btn-block">Submit</button>
+  </fieldset>
+</form>
