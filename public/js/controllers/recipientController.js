@@ -12,7 +12,7 @@ controller('RecipientController', ['$scope', function($scope) {
   };
 
   $scope.submitInfo = function(recipientInfo) {
-
+    console.log($scope.recipientInfo);
   };
 
 }]);
